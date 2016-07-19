@@ -114,7 +114,7 @@ app.on('ready', function() {
         folderWatcher();
     });
     //Creating the Directory and watch it.
-    var dir = '/home/StreamUpBox';
+    var dir = '/home/ely';
     if (!filessystem.existsSync(dir)){
         filessystem.mkdirSync(dir);
         console.log("Folder created Successfully!");
@@ -134,6 +134,8 @@ ncp(dir, destination, function (err) {
  }
  console.log('done copying!');
 });
+
+
        
 });
 
