@@ -23,6 +23,11 @@ sync.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $url
       url: "/Login",
       templateUrl: 'login.html',
       controller: 'loginController',
+    })
+    .state('SignUp', {
+      url: "/signup",
+      templateUrl: 'signup.html',
+      controller: 'loginController',
     });
     $urlRouterProvider.otherwise('/Login');
 }]);
