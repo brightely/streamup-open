@@ -100,7 +100,9 @@ app.on('ready', function() {
                 // Response is response from notification 
                 });
                 user
-
+ fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
+        folderWatcher();
+    });
 
                 notifier.on('timeout', function (notifierObject, options) {
                 // Triggers if `wait: true` and notification closes 
@@ -110,11 +112,9 @@ app.on('ready', function() {
 
         });
     };
-    fs.watch("/home/StreamUpBox", { persistent: true }, function (event, fileName) {
-        folderWatcher();
-    });
+   
     //Creating the Directory and watch it.
-    var dir = '/home/ely';
+    var dir = '/home/StreamUpBox';
     if (!filessystem.existsSync(dir)){
         filessystem.mkdirSync(dir);
         console.log("Folder created Successfully!");
